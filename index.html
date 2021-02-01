@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="./scripts/three.min.js"></script>
+    <script src="./scripts/panolens.min.js"></script>
+
+    <title>Panolens POC</title>
+  </head>
+  <body>
+
+  <div id="pano-image" style = "width: 80%; height: 600px;"></div>
+  <script>
+    const panoImage = document.querySelector('#pano-image');
+    const image1 = "./images/pano1.jpg";
+
+    const panorama = new PANOLENS.ImagePanorama( image1);
+    const viewer = new PANOLENS.Viewer({
+      container: panoImage,
+      autoRotate: true, autoRotateSpeed: 1, autoRotateActivationDuration: 5000
+    });
+    viewer.add( panorama );
+  </script>
+  </body>
+</html>
